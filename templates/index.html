@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Undercut Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h2>Race Selection</h2>
+            <div class="selection-group">
+                <label for="yearSelect">Season</label>
+                <select id="yearSelect">
+                    <option value="">Select Year</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+            
+            <div class="selection-group">
+                <label for="eventSelect">Grand Prix</label>
+                <select id="eventSelect">
+                    <option value="">Select Race</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Middle Panel -->
+        <div class="middle-panel">
+            <!-- Lap Slider -->
+            <div class="card">
+                <h3>Select Lap</h3>
+                <div class="lap-slider-container">
+                    <span class="lap-value" id="lapValue">1</span>
+                    <input type="range" id="lapSlider" class="slider" min="1" max="1" value="1" disabled>
+                </div>
+            </div>
+            
+            <!-- Driver Selection -->
+            <div class="card">
+                <h3>Select Drivers</h3>
+                <div class="driver-selection">
+                    <div class="driver-box" id="chaserBox">
+                        <h4>Chaser</h4>
+                        <select id="chaserSelect" disabled>
+                            <option value="">Select Chaser</option>
+                        </select>
+                    </div>
+                    
+                    <div class="vs-text">VS</div>
+                    
+                    <div class="driver-box" id="defenderBox">
+                        <h4>Defender</h4>
+                        <select id="defenderSelect" disabled>
+                            <option value="">Select Defender</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="predictBtn" class="predict-button" disabled>Predict Undercut</button>
+            </div>
+            
+            <!-- Prediction Result -->
+            <div class="card" id="predictionResult" style="display: none;">
+                <h3>Prediction Result</h3>
+                <div class="prediction-result">
+                    <div>
+                        <h4>Undercut Success</h4>
+                        <div class="success-badge success" id="successBadge">SUCCESS</div>
+                        <div id="confidenceBadge">Medium Confidence</div>
+                    </div>
+                    <div>
+                        <h4>Success Probability</h4>
+                        <div style="font-size: 2.5rem; font-weight: bold;" id="probabilityValue">75%</div>
+                        <div>Based on ML Model</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <h2>Current Standings</h2>
+            <p>Lap: <span id="currentLapDisplay">0</span></p>
+            <div id="standingsList">
+                <div class="empty-state">
+                    <i class="fas fa-flag-checkered"></i>
+                    <p>Select a race and lap to see standings</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

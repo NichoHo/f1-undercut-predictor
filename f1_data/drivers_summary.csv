@@ -1,0 +1,877 @@
+Year,RoundNumber,Driver,Team
+2023,1,VER,Red Bull Racing
+2023,1,GAS,Alpine
+2023,1,PER,Red Bull Racing
+2023,1,ALO,Aston Martin
+2023,1,LEC,Ferrari
+2023,1,STR,Aston Martin
+2023,1,SAR,Williams
+2023,1,MAG,Haas F1 Team
+2023,1,DEV,AlphaTauri
+2023,1,TSU,AlphaTauri
+2023,1,ALB,Williams
+2023,1,ZHO,Alfa Romeo
+2023,1,HUL,Haas F1 Team
+2023,1,OCO,Alpine
+2023,1,NOR,McLaren
+2023,1,HAM,Mercedes
+2023,1,SAI,Ferrari
+2023,1,RUS,Mercedes
+2023,1,BOT,Alfa Romeo
+2023,1,PIA,McLaren
+2023,2,VER,Red Bull Racing
+2023,2,GAS,Alpine
+2023,2,PER,Red Bull Racing
+2023,2,ALO,Aston Martin
+2023,2,LEC,Ferrari
+2023,2,STR,Aston Martin
+2023,2,SAR,Williams
+2023,2,MAG,Haas F1 Team
+2023,2,DEV,AlphaTauri
+2023,2,TSU,AlphaTauri
+2023,2,ALB,Williams
+2023,2,ZHO,Alfa Romeo
+2023,2,HUL,Haas F1 Team
+2023,2,OCO,Alpine
+2023,2,NOR,McLaren
+2023,2,HAM,Mercedes
+2023,2,SAI,Ferrari
+2023,2,RUS,Mercedes
+2023,2,BOT,Alfa Romeo
+2023,2,PIA,McLaren
+2023,3,VER,Red Bull Racing
+2023,3,GAS,Alpine
+2023,3,PER,Red Bull Racing
+2023,3,ALO,Aston Martin
+2023,3,LEC,Ferrari
+2023,3,STR,Aston Martin
+2023,3,SAR,Williams
+2023,3,MAG,Haas F1 Team
+2023,3,DEV,AlphaTauri
+2023,3,TSU,AlphaTauri
+2023,3,ALB,Williams
+2023,3,ZHO,Alfa Romeo
+2023,3,HUL,Haas F1 Team
+2023,3,OCO,Alpine
+2023,3,NOR,McLaren
+2023,3,HAM,Mercedes
+2023,3,SAI,Ferrari
+2023,3,RUS,Mercedes
+2023,3,BOT,Alfa Romeo
+2023,3,PIA,McLaren
+2023,4,VER,Red Bull Racing
+2023,4,GAS,Alpine
+2023,4,PER,Red Bull Racing
+2023,4,ALO,Aston Martin
+2023,4,LEC,Ferrari
+2023,4,STR,Aston Martin
+2023,4,SAR,Williams
+2023,4,MAG,Haas F1 Team
+2023,4,DEV,AlphaTauri
+2023,4,TSU,AlphaTauri
+2023,4,ALB,Williams
+2023,4,ZHO,Alfa Romeo
+2023,4,HUL,Haas F1 Team
+2023,4,OCO,Alpine
+2023,4,NOR,McLaren
+2023,4,HAM,Mercedes
+2023,4,SAI,Ferrari
+2023,4,RUS,Mercedes
+2023,4,BOT,Alfa Romeo
+2023,4,PIA,McLaren
+2023,5,PER,Red Bull Racing
+2023,5,ALO,Aston Martin
+2023,5,SAI,Ferrari
+2023,5,MAG,Haas F1 Team
+2023,5,GAS,Alpine
+2023,5,RUS,Mercedes
+2023,5,LEC,Ferrari
+2023,5,OCO,Alpine
+2023,5,VER,Red Bull Racing
+2023,5,BOT,Alfa Romeo
+2023,5,ALB,Williams
+2023,5,HUL,Haas F1 Team
+2023,5,HAM,Mercedes
+2023,5,ZHO,Alfa Romeo
+2023,5,DEV,AlphaTauri
+2023,5,NOR,McLaren
+2023,5,TSU,AlphaTauri
+2023,5,STR,Aston Martin
+2023,5,PIA,McLaren
+2023,5,SAR,Williams
+2023,6,VER,Red Bull Racing
+2023,6,GAS,Alpine
+2023,6,PER,Red Bull Racing
+2023,6,ALO,Aston Martin
+2023,6,LEC,Ferrari
+2023,6,STR,Aston Martin
+2023,6,SAR,Williams
+2023,6,MAG,Haas F1 Team
+2023,6,DEV,AlphaTauri
+2023,6,TSU,AlphaTauri
+2023,6,ALB,Williams
+2023,6,ZHO,Alfa Romeo
+2023,6,HUL,Haas F1 Team
+2023,6,OCO,Alpine
+2023,6,NOR,McLaren
+2023,6,HAM,Mercedes
+2023,6,SAI,Ferrari
+2023,6,RUS,Mercedes
+2023,6,BOT,Alfa Romeo
+2023,6,PIA,McLaren
+2023,7,VER,Red Bull Racing
+2023,7,SAI,Ferrari
+2023,7,NOR,McLaren
+2023,7,HAM,Mercedes
+2023,7,STR,Aston Martin
+2023,7,OCO,Alpine
+2023,7,HUL,Haas F1 Team
+2023,7,ALO,Aston Martin
+2023,7,PIA,McLaren
+2023,7,GAS,Alpine
+2023,7,PER,Red Bull Racing
+2023,7,RUS,Mercedes
+2023,7,ZHO,Alfa Romeo
+2023,7,DEV,AlphaTauri
+2023,7,TSU,AlphaTauri
+2023,7,BOT,Alfa Romeo
+2023,7,MAG,Haas F1 Team
+2023,7,ALB,Williams
+2023,7,LEC,Ferrari
+2023,7,SAR,Williams
+2023,8,VER,Red Bull Racing
+2023,8,GAS,Alpine
+2023,8,PER,Red Bull Racing
+2023,8,ALO,Aston Martin
+2023,8,LEC,Ferrari
+2023,8,STR,Aston Martin
+2023,8,SAR,Williams
+2023,8,MAG,Haas F1 Team
+2023,8,DEV,AlphaTauri
+2023,8,TSU,AlphaTauri
+2023,8,ALB,Williams
+2023,8,ZHO,Alfa Romeo
+2023,8,HUL,Haas F1 Team
+2023,8,OCO,Alpine
+2023,8,NOR,McLaren
+2023,8,HAM,Mercedes
+2023,8,SAI,Ferrari
+2023,8,RUS,Mercedes
+2023,8,BOT,Alfa Romeo
+2023,8,PIA,McLaren
+2023,9,VER,Red Bull Racing
+2023,9,GAS,Alpine
+2023,9,PER,Red Bull Racing
+2023,9,ALO,Aston Martin
+2023,9,LEC,Ferrari
+2023,9,STR,Aston Martin
+2023,9,SAR,Williams
+2023,9,MAG,Haas F1 Team
+2023,9,DEV,AlphaTauri
+2023,9,TSU,AlphaTauri
+2023,9,ALB,Williams
+2023,9,ZHO,Alfa Romeo
+2023,9,HUL,Haas F1 Team
+2023,9,OCO,Alpine
+2023,9,NOR,McLaren
+2023,9,HAM,Mercedes
+2023,9,SAI,Ferrari
+2023,9,RUS,Mercedes
+2023,9,BOT,Alfa Romeo
+2023,9,PIA,McLaren
+2023,10,VER,Red Bull Racing
+2023,10,GAS,Alpine
+2023,10,PER,Red Bull Racing
+2023,10,ALO,Aston Martin
+2023,10,LEC,Ferrari
+2023,10,STR,Aston Martin
+2023,10,SAR,Williams
+2023,10,MAG,Haas F1 Team
+2023,10,DEV,AlphaTauri
+2023,10,TSU,AlphaTauri
+2023,10,ALB,Williams
+2023,10,ZHO,Alfa Romeo
+2023,10,HUL,Haas F1 Team
+2023,10,OCO,Alpine
+2023,10,NOR,McLaren
+2023,10,HAM,Mercedes
+2023,10,SAI,Ferrari
+2023,10,RUS,Mercedes
+2023,10,BOT,Alfa Romeo
+2023,10,PIA,McLaren
+2023,11,HAM,Mercedes
+2023,11,VER,Red Bull Racing
+2023,11,NOR,McLaren
+2023,11,PIA,McLaren
+2023,11,ZHO,Alfa Romeo
+2023,11,LEC,Ferrari
+2023,11,BOT,Alfa Romeo
+2023,11,ALO,Aston Martin
+2023,11,PER,Red Bull Racing
+2023,11,HUL,Haas F1 Team
+2023,11,SAI,Ferrari
+2023,11,OCO,Alpine
+2023,11,RIC,AlphaTauri
+2023,11,STR,Aston Martin
+2023,11,GAS,Alpine
+2023,11,ALB,Williams
+2023,11,TSU,AlphaTauri
+2023,11,RUS,Mercedes
+2023,11,MAG,Haas F1 Team
+2023,11,SAR,Williams
+2023,12,LEC,Ferrari
+2023,12,PER,Red Bull Racing
+2023,12,HAM,Mercedes
+2023,12,SAI,Ferrari
+2023,12,PIA,McLaren
+2023,12,VER,Red Bull Racing
+2023,12,NOR,McLaren
+2023,12,RUS,Mercedes
+2023,12,ALO,Aston Martin
+2023,12,STR,Aston Martin
+2023,12,TSU,AlphaTauri
+2023,12,GAS,Alpine
+2023,12,BOT,Alfa Romeo
+2023,12,OCO,Alpine
+2023,12,ALB,Williams
+2023,12,MAG,Haas F1 Team
+2023,12,ZHO,Alfa Romeo
+2023,12,SAR,Williams
+2023,12,RIC,AlphaTauri
+2023,12,HUL,Haas F1 Team
+2023,13,VER,Red Bull Racing
+2023,13,GAS,Alpine
+2023,13,PER,Red Bull Racing
+2023,13,ALO,Aston Martin
+2023,13,LEC,Ferrari
+2023,13,STR,Aston Martin
+2023,13,SAR,Williams
+2023,13,MAG,Haas F1 Team
+2023,13,TSU,AlphaTauri
+2023,13,ALB,Williams
+2023,13,ZHO,Alfa Romeo
+2023,13,HUL,Haas F1 Team
+2023,13,OCO,Alpine
+2023,13,NOR,McLaren
+2023,13,LAW,AlphaTauri
+2023,13,HAM,Mercedes
+2023,13,SAI,Ferrari
+2023,13,RUS,Mercedes
+2023,13,BOT,Alfa Romeo
+2023,13,PIA,McLaren
+2023,14,VER,Red Bull Racing
+2023,14,GAS,Alpine
+2023,14,PER,Red Bull Racing
+2023,14,ALO,Aston Martin
+2023,14,LEC,Ferrari
+2023,14,STR,Aston Martin
+2023,14,SAR,Williams
+2023,14,MAG,Haas F1 Team
+2023,14,TSU,AlphaTauri
+2023,14,ALB,Williams
+2023,14,ZHO,Alfa Romeo
+2023,14,HUL,Haas F1 Team
+2023,14,OCO,Alpine
+2023,14,NOR,McLaren
+2023,14,LAW,AlphaTauri
+2023,14,HAM,Mercedes
+2023,14,SAI,Ferrari
+2023,14,RUS,Mercedes
+2023,14,BOT,Alfa Romeo
+2023,14,PIA,McLaren
+2023,15,VER,Red Bull Racing
+2023,15,GAS,Alpine
+2023,15,PER,Red Bull Racing
+2023,15,ALO,Aston Martin
+2023,15,LEC,Ferrari
+2023,15,SAR,Williams
+2023,15,MAG,Haas F1 Team
+2023,15,TSU,AlphaTauri
+2023,15,ALB,Williams
+2023,15,ZHO,Alfa Romeo
+2023,15,HUL,Haas F1 Team
+2023,15,OCO,Alpine
+2023,15,NOR,McLaren
+2023,15,LAW,AlphaTauri
+2023,15,HAM,Mercedes
+2023,15,SAI,Ferrari
+2023,15,RUS,Mercedes
+2023,15,BOT,Alfa Romeo
+2023,15,PIA,McLaren
+2023,16,VER,Red Bull Racing
+2023,16,PIA,McLaren
+2023,16,NOR,McLaren
+2023,16,LEC,Ferrari
+2023,16,PER,Red Bull Racing
+2023,16,SAI,Ferrari
+2023,16,HAM,Mercedes
+2023,16,RUS,Mercedes
+2023,16,TSU,AlphaTauri
+2023,16,ALO,Aston Martin
+2023,16,LAW,AlphaTauri
+2023,16,GAS,Alpine
+2023,16,ALB,Williams
+2023,16,OCO,Alpine
+2023,16,MAG,Haas F1 Team
+2023,16,BOT,Alfa Romeo
+2023,16,STR,Aston Martin
+2023,16,HUL,Haas F1 Team
+2023,16,ZHO,Alfa Romeo
+2023,16,SAR,Williams
+2023,17,VER,Red Bull Racing
+2023,17,RUS,Mercedes
+2023,17,HAM,Mercedes
+2023,17,ALO,Aston Martin
+2023,17,LEC,Ferrari
+2023,17,PIA,McLaren
+2023,17,GAS,Alpine
+2023,17,OCO,Alpine
+2023,17,BOT,Alfa Romeo
+2023,17,NOR,McLaren
+2023,17,TSU,AlphaTauri
+2023,17,ALB,Williams
+2023,17,HUL,Haas F1 Team
+2023,17,SAR,Williams
+2023,17,STR,Aston Martin
+2023,17,LAW,AlphaTauri
+2023,17,MAG,Haas F1 Team
+2023,17,ZHO,Alfa Romeo
+2023,17,PER,Red Bull Racing
+2023,18,LEC,Ferrari
+2023,18,NOR,McLaren
+2023,18,HAM,Mercedes
+2023,18,SAI,Ferrari
+2023,18,RUS,Mercedes
+2023,18,VER,Red Bull Racing
+2023,18,GAS,Alpine
+2023,18,OCO,Alpine
+2023,18,PER,Red Bull Racing
+2023,18,PIA,McLaren
+2023,18,TSU,AlphaTauri
+2023,18,ZHO,Alfa Romeo
+2023,18,BOT,Alfa Romeo
+2023,18,RIC,AlphaTauri
+2023,18,ALB,Williams
+2023,18,SAR,Williams
+2023,18,MAG,Haas F1 Team
+2023,18,HUL,Haas F1 Team
+2023,18,ALO,Aston Martin
+2023,18,STR,Aston Martin
+2023,19,VER,Red Bull Racing
+2023,19,GAS,Alpine
+2023,19,PER,Red Bull Racing
+2023,19,ALO,Aston Martin
+2023,19,LEC,Ferrari
+2023,19,STR,Aston Martin
+2023,19,SAR,Williams
+2023,19,MAG,Haas F1 Team
+2023,19,TSU,AlphaTauri
+2023,19,ALB,Williams
+2023,19,ZHO,Alfa Romeo
+2023,19,HUL,Haas F1 Team
+2023,19,RIC,AlphaTauri
+2023,19,OCO,Alpine
+2023,19,NOR,McLaren
+2023,19,HAM,Mercedes
+2023,19,SAI,Ferrari
+2023,19,RUS,Mercedes
+2023,19,BOT,Alfa Romeo
+2023,19,PIA,McLaren
+2023,20,VER,Red Bull Racing
+2023,20,LEC,Ferrari
+2023,20,STR,Aston Martin
+2023,20,ALO,Aston Martin
+2023,20,HAM,Mercedes
+2023,20,NOR,McLaren
+2023,20,SAI,Ferrari
+2023,20,RUS,Mercedes
+2023,20,PER,Red Bull Racing
+2023,20,PIA,McLaren
+2023,20,HUL,Haas F1 Team
+2023,20,MAG,Haas F1 Team
+2023,20,ALB,Williams
+2023,20,OCO,Alpine
+2023,20,GAS,Alpine
+2023,20,TSU,AlphaTauri
+2023,20,RIC,AlphaTauri
+2023,20,BOT,Alfa Romeo
+2023,20,SAR,Williams
+2023,20,ZHO,Alfa Romeo
+2023,22,VER,Red Bull Racing
+2023,22,LEC,Ferrari
+2023,22,PIA,McLaren
+2023,22,RUS,Mercedes
+2023,22,NOR,McLaren
+2023,22,TSU,AlphaTauri
+2023,22,ALO,Aston Martin
+2023,22,HUL,Haas F1 Team
+2023,22,PER,Red Bull Racing
+2023,22,GAS,Alpine
+2023,22,HAM,Mercedes
+2023,22,OCO,Alpine
+2023,22,STR,Aston Martin
+2023,22,ALB,Williams
+2023,22,RIC,AlphaTauri
+2023,22,SAI,Ferrari
+2023,22,MAG,Haas F1 Team
+2023,22,BOT,Alfa Romeo
+2023,22,ZHO,Alfa Romeo
+2023,22,SAR,Williams
+2024,1,VER,Red Bull Racing
+2024,1,LEC,Ferrari
+2024,1,RUS,Mercedes
+2024,1,SAI,Ferrari
+2024,1,PER,Red Bull Racing
+2024,1,ALO,Aston Martin
+2024,1,NOR,McLaren
+2024,1,PIA,McLaren
+2024,1,HAM,Mercedes
+2024,1,HUL,Haas F1 Team
+2024,1,TSU,RB
+2024,1,STR,Aston Martin
+2024,1,ALB,Williams
+2024,1,RIC,RB
+2024,1,MAG,Haas F1 Team
+2024,1,BOT,Kick Sauber
+2024,1,ZHO,Kick Sauber
+2024,1,SAR,Williams
+2024,1,OCO,Alpine
+2024,1,GAS,Alpine
+2024,2,VER,Red Bull Racing
+2024,2,GAS,Alpine
+2024,2,PER,Red Bull Racing
+2024,2,ALO,Aston Martin
+2024,2,LEC,Ferrari
+2024,2,STR,Aston Martin
+2024,2,SAR,Williams
+2024,2,MAG,Haas F1 Team
+2024,2,TSU,RB
+2024,2,ALB,Williams
+2024,2,ZHO,Kick Sauber
+2024,2,HUL,Haas F1 Team
+2024,2,RIC,RB
+2024,2,OCO,Alpine
+2024,2,BEA,Ferrari
+2024,2,NOR,McLaren
+2024,2,HAM,Mercedes
+2024,2,RUS,Mercedes
+2024,2,BOT,Kick Sauber
+2024,2,PIA,McLaren
+2024,3,VER,Red Bull Racing
+2024,3,GAS,Alpine
+2024,3,PER,Red Bull Racing
+2024,3,ALO,Aston Martin
+2024,3,LEC,Ferrari
+2024,3,STR,Aston Martin
+2024,3,MAG,Haas F1 Team
+2024,3,TSU,RB
+2024,3,ALB,Williams
+2024,3,ZHO,Kick Sauber
+2024,3,HUL,Haas F1 Team
+2024,3,RIC,RB
+2024,3,OCO,Alpine
+2024,3,NOR,McLaren
+2024,3,HAM,Mercedes
+2024,3,SAI,Ferrari
+2024,3,RUS,Mercedes
+2024,3,BOT,Kick Sauber
+2024,3,PIA,McLaren
+2024,4,VER,Red Bull Racing
+2024,4,PER,Red Bull Racing
+2024,4,NOR,McLaren
+2024,4,SAI,Ferrari
+2024,4,ALO,Aston Martin
+2024,4,PIA,McLaren
+2024,4,HAM,Mercedes
+2024,4,LEC,Ferrari
+2024,4,RUS,Mercedes
+2024,4,TSU,RB
+2024,4,RIC,RB
+2024,4,HUL,Haas F1 Team
+2024,4,BOT,Kick Sauber
+2024,4,ALB,Williams
+2024,4,OCO,Alpine
+2024,4,STR,Aston Martin
+2024,4,GAS,Alpine
+2024,4,MAG,Haas F1 Team
+2024,4,SAR,Williams
+2024,4,ZHO,Kick Sauber
+2024,5,VER,Red Bull Racing
+2024,5,GAS,Alpine
+2024,5,PER,Red Bull Racing
+2024,5,ALO,Aston Martin
+2024,5,LEC,Ferrari
+2024,5,STR,Aston Martin
+2024,5,SAR,Williams
+2024,5,MAG,Haas F1 Team
+2024,5,TSU,RB
+2024,5,ALB,Williams
+2024,5,ZHO,Kick Sauber
+2024,5,HUL,Haas F1 Team
+2024,5,RIC,RB
+2024,5,OCO,Alpine
+2024,5,NOR,McLaren
+2024,5,HAM,Mercedes
+2024,5,SAI,Ferrari
+2024,5,RUS,Mercedes
+2024,5,BOT,Kick Sauber
+2024,5,PIA,McLaren
+2024,6,VER,Red Bull Racing
+2024,6,GAS,Alpine
+2024,6,PER,Red Bull Racing
+2024,6,ALO,Aston Martin
+2024,6,LEC,Ferrari
+2024,6,STR,Aston Martin
+2024,6,SAR,Williams
+2024,6,MAG,Haas F1 Team
+2024,6,TSU,RB
+2024,6,ALB,Williams
+2024,6,ZHO,Kick Sauber
+2024,6,HUL,Haas F1 Team
+2024,6,RIC,RB
+2024,6,OCO,Alpine
+2024,6,NOR,McLaren
+2024,6,HAM,Mercedes
+2024,6,SAI,Ferrari
+2024,6,RUS,Mercedes
+2024,6,BOT,Kick Sauber
+2024,6,PIA,McLaren
+2024,7,VER,Red Bull Racing
+2024,7,NOR,McLaren
+2024,7,LEC,Ferrari
+2024,7,SAI,Ferrari
+2024,7,PIA,McLaren
+2024,7,RUS,Mercedes
+2024,7,TSU,RB
+2024,7,HAM,Mercedes
+2024,7,RIC,RB
+2024,7,HUL,Haas F1 Team
+2024,7,PER,Red Bull Racing
+2024,7,OCO,Alpine
+2024,7,STR,Aston Martin
+2024,7,ALB,Williams
+2024,7,GAS,Alpine
+2024,7,BOT,Kick Sauber
+2024,7,ZHO,Kick Sauber
+2024,7,MAG,Haas F1 Team
+2024,7,SAR,Williams
+2024,7,ALO,Aston Martin
+2024,8,LEC,Ferrari
+2024,8,PIA,McLaren
+2024,8,SAI,Ferrari
+2024,8,NOR,McLaren
+2024,8,RUS,Mercedes
+2024,8,VER,Red Bull Racing
+2024,8,HAM,Mercedes
+2024,8,TSU,RB
+2024,8,ALB,Williams
+2024,8,GAS,Alpine
+2024,8,OCO,Alpine
+2024,8,RIC,RB
+2024,8,STR,Aston Martin
+2024,8,ALO,Aston Martin
+2024,8,SAR,Williams
+2024,8,PER,Red Bull Racing
+2024,8,BOT,Kick Sauber
+2024,8,ZHO,Kick Sauber
+2024,8,HUL,Haas F1 Team
+2024,8,MAG,Haas F1 Team
+2024,9,VER,Red Bull Racing
+2024,9,GAS,Alpine
+2024,9,PER,Red Bull Racing
+2024,9,ALO,Aston Martin
+2024,9,LEC,Ferrari
+2024,9,STR,Aston Martin
+2024,9,SAR,Williams
+2024,9,MAG,Haas F1 Team
+2024,9,TSU,RB
+2024,9,ALB,Williams
+2024,9,ZHO,Kick Sauber
+2024,9,HUL,Haas F1 Team
+2024,9,RIC,RB
+2024,9,OCO,Alpine
+2024,9,NOR,McLaren
+2024,9,HAM,Mercedes
+2024,9,SAI,Ferrari
+2024,9,RUS,Mercedes
+2024,9,BOT,Kick Sauber
+2024,9,PIA,McLaren
+2024,10,NOR,McLaren
+2024,10,VER,Red Bull Racing
+2024,10,HAM,Mercedes
+2024,10,RUS,Mercedes
+2024,10,LEC,Ferrari
+2024,10,SAI,Ferrari
+2024,10,GAS,Alpine
+2024,10,OCO,Alpine
+2024,10,PIA,McLaren
+2024,10,ALO,Aston Martin
+2024,10,PER,Red Bull Racing
+2024,10,BOT,Kick Sauber
+2024,10,HUL,Haas F1 Team
+2024,10,STR,Aston Martin
+2024,10,ZHO,Kick Sauber
+2024,10,MAG,Haas F1 Team
+2024,10,TSU,RB
+2024,10,RIC,RB
+2024,10,SAR,Williams
+2024,10,ALB,Williams
+2024,11,VER,Red Bull Racing
+2024,11,NOR,McLaren
+2024,11,RUS,Mercedes
+2024,11,SAI,Ferrari
+2024,11,HAM,Mercedes
+2024,11,LEC,Ferrari
+2024,11,PIA,McLaren
+2024,11,PER,Red Bull Racing
+2024,11,HUL,Haas F1 Team
+2024,11,OCO,Alpine
+2024,11,RIC,RB
+2024,11,MAG,Haas F1 Team
+2024,11,GAS,Alpine
+2024,11,TSU,RB
+2024,11,ALO,Aston Martin
+2024,11,ALB,Williams
+2024,11,STR,Aston Martin
+2024,11,BOT,Kick Sauber
+2024,11,SAR,Williams
+2024,11,ZHO,Kick Sauber
+2024,12,RUS,Mercedes
+2024,12,HAM,Mercedes
+2024,12,NOR,McLaren
+2024,12,VER,Red Bull Racing
+2024,12,PIA,McLaren
+2024,12,HUL,Haas F1 Team
+2024,12,SAI,Ferrari
+2024,12,STR,Aston Martin
+2024,12,ALB,Williams
+2024,12,ALO,Aston Martin
+2024,12,LEC,Ferrari
+2024,12,SAR,Williams
+2024,12,TSU,RB
+2024,12,ZHO,Kick Sauber
+2024,12,RIC,RB
+2024,12,BOT,Kick Sauber
+2024,12,MAG,Haas F1 Team
+2024,12,OCO,Alpine
+2024,12,GAS,Alpine
+2024,12,PER,Red Bull Racing
+2024,13,NOR,McLaren
+2024,13,PIA,McLaren
+2024,13,VER,Red Bull Racing
+2024,13,SAI,Ferrari
+2024,13,HAM,Mercedes
+2024,13,LEC,Ferrari
+2024,13,ALO,Aston Martin
+2024,13,STR,Aston Martin
+2024,13,RIC,RB
+2024,13,TSU,RB
+2024,13,HUL,Haas F1 Team
+2024,13,BOT,Kick Sauber
+2024,13,ALB,Williams
+2024,13,SAR,Williams
+2024,13,MAG,Haas F1 Team
+2024,13,PER,Red Bull Racing
+2024,13,RUS,Mercedes
+2024,13,ZHO,Kick Sauber
+2024,13,OCO,Alpine
+2024,13,GAS,Alpine
+2024,14,LEC,Ferrari
+2024,14,PER,Red Bull Racing
+2024,14,HAM,Mercedes
+2024,14,NOR,McLaren
+2024,14,PIA,McLaren
+2024,14,RUS,Mercedes
+2024,14,SAI,Ferrari
+2024,14,ALO,Aston Martin
+2024,14,OCO,Alpine
+2024,14,ALB,Williams
+2024,14,VER,Red Bull Racing
+2024,14,GAS,Alpine
+2024,14,RIC,RB
+2024,14,BOT,Kick Sauber
+2024,14,STR,Aston Martin
+2024,14,HUL,Haas F1 Team
+2024,14,MAG,Haas F1 Team
+2024,14,SAR,Williams
+2024,14,ZHO,Kick Sauber
+2024,14,TSU,RB
+2024,15,NOR,McLaren
+2024,15,VER,Red Bull Racing
+2024,15,PIA,McLaren
+2024,15,RUS,Mercedes
+2024,15,PER,Red Bull Racing
+2024,15,LEC,Ferrari
+2024,15,ALO,Aston Martin
+2024,15,STR,Aston Martin
+2024,15,GAS,Alpine
+2024,15,SAI,Ferrari
+2024,15,TSU,RB
+2024,15,HUL,Haas F1 Team
+2024,15,RIC,RB
+2024,15,HAM,Mercedes
+2024,15,OCO,Alpine
+2024,15,BOT,Kick Sauber
+2024,15,ZHO,Kick Sauber
+2024,15,SAR,Williams
+2024,15,ALB,Williams
+2024,15,MAG,Haas F1 Team
+2024,16,NOR,McLaren
+2024,16,PIA,McLaren
+2024,16,RUS,Mercedes
+2024,16,LEC,Ferrari
+2024,16,SAI,Ferrari
+2024,16,HAM,Mercedes
+2024,16,VER,Red Bull Racing
+2024,16,PER,Red Bull Racing
+2024,16,ALB,Williams
+2024,16,HUL,Haas F1 Team
+2024,16,ALO,Aston Martin
+2024,16,RIC,RB
+2024,16,MAG,Haas F1 Team
+2024,16,GAS,Alpine
+2024,16,OCO,Alpine
+2024,16,TSU,RB
+2024,16,STR,Aston Martin
+2024,16,COL,Williams
+2024,16,BOT,Kick Sauber
+2024,16,ZHO,Kick Sauber
+2024,17,VER,Red Bull Racing
+2024,17,GAS,Alpine
+2024,17,PER,Red Bull Racing
+2024,17,ALO,Aston Martin
+2024,17,LEC,Ferrari
+2024,17,STR,Aston Martin
+2024,17,TSU,RB
+2024,17,ALB,Williams
+2024,17,ZHO,Kick Sauber
+2024,17,HUL,Haas F1 Team
+2024,17,RIC,RB
+2024,17,OCO,Alpine
+2024,17,NOR,McLaren
+2024,17,COL,Williams
+2024,17,HAM,Mercedes
+2024,17,BEA,Haas F1 Team
+2024,17,SAI,Ferrari
+2024,17,RUS,Mercedes
+2024,17,BOT,Kick Sauber
+2024,17,PIA,McLaren
+2024,18,NOR,McLaren
+2024,18,VER,Red Bull Racing
+2024,18,HAM,Mercedes
+2024,18,RUS,Mercedes
+2024,18,PIA,McLaren
+2024,18,HUL,Haas F1 Team
+2024,18,ALO,Aston Martin
+2024,18,TSU,RB
+2024,18,LEC,Ferrari
+2024,18,SAI,Ferrari
+2024,18,ALB,Williams
+2024,18,COL,Williams
+2024,18,PER,Red Bull Racing
+2024,18,MAG,Haas F1 Team
+2024,18,OCO,Alpine
+2024,18,RIC,RB
+2024,18,STR,Aston Martin
+2024,18,GAS,Alpine
+2024,18,BOT,Kick Sauber
+2024,18,ZHO,Kick Sauber
+2024,19,VER,Red Bull Racing
+2024,19,GAS,Alpine
+2024,19,PER,Red Bull Racing
+2024,19,ALO,Aston Martin
+2024,19,LEC,Ferrari
+2024,19,STR,Aston Martin
+2024,19,MAG,Haas F1 Team
+2024,19,TSU,RB
+2024,19,ALB,Williams
+2024,19,ZHO,Kick Sauber
+2024,19,HUL,Haas F1 Team
+2024,19,LAW,RB
+2024,19,OCO,Alpine
+2024,19,NOR,McLaren
+2024,19,COL,Williams
+2024,19,HAM,Mercedes
+2024,19,SAI,Ferrari
+2024,19,RUS,Mercedes
+2024,19,BOT,Kick Sauber
+2024,19,PIA,McLaren
+2024,20,SAI,Ferrari
+2024,20,VER,Red Bull Racing
+2024,20,NOR,McLaren
+2024,20,LEC,Ferrari
+2024,20,RUS,Mercedes
+2024,20,HAM,Mercedes
+2024,20,MAG,Haas F1 Team
+2024,20,GAS,Alpine
+2024,20,ALB,Williams
+2024,20,HUL,Haas F1 Team
+2024,20,TSU,RB
+2024,20,LAW,RB
+2024,20,ALO,Aston Martin
+2024,20,STR,Aston Martin
+2024,20,BOT,Kick Sauber
+2024,20,COL,Williams
+2024,20,PIA,McLaren
+2024,20,PER,Red Bull Racing
+2024,20,ZHO,Kick Sauber
+2024,20,OCO,Alpine
+2024,21,VER,Red Bull Racing
+2024,21,GAS,Alpine
+2024,21,PER,Red Bull Racing
+2024,21,ALO,Aston Martin
+2024,21,LEC,Ferrari
+2024,21,STR,Aston Martin
+2024,21,TSU,RB
+2024,21,ZHO,Kick Sauber
+2024,21,HUL,Haas F1 Team
+2024,21,LAW,RB
+2024,21,OCO,Alpine
+2024,21,NOR,McLaren
+2024,21,COL,Williams
+2024,21,HAM,Mercedes
+2024,21,BEA,Haas F1 Team
+2024,21,SAI,Ferrari
+2024,21,RUS,Mercedes
+2024,21,BOT,Kick Sauber
+2024,21,PIA,McLaren
+2024,23,VER,Red Bull Racing
+2024,23,GAS,Alpine
+2024,23,PER,Red Bull Racing
+2024,23,ALO,Aston Martin
+2024,23,LEC,Ferrari
+2024,23,STR,Aston Martin
+2024,23,MAG,Haas F1 Team
+2024,23,TSU,RB
+2024,23,ALB,Williams
+2024,23,ZHO,Kick Sauber
+2024,23,HUL,Haas F1 Team
+2024,23,LAW,RB
+2024,23,OCO,Alpine
+2024,23,NOR,McLaren
+2024,23,COL,Williams
+2024,23,HAM,Mercedes
+2024,23,SAI,Ferrari
+2024,23,RUS,Mercedes
+2024,23,BOT,Kick Sauber
+2024,23,PIA,McLaren
+2024,24,VER,Red Bull Racing
+2024,24,GAS,Alpine
+2024,24,PER,Red Bull Racing
+2024,24,ALO,Aston Martin
+2024,24,LEC,Ferrari
+2024,24,STR,Aston Martin
+2024,24,MAG,Haas F1 Team
+2024,24,TSU,RB
+2024,24,ALB,Williams
+2024,24,ZHO,Kick Sauber
+2024,24,HUL,Haas F1 Team
+2024,24,LAW,RB
+2024,24,NOR,McLaren
+2024,24,COL,Williams
+2024,24,HAM,Mercedes
+2024,24,SAI,Ferrari
+2024,24,DOO,Alpine
+2024,24,RUS,Mercedes
+2024,24,BOT,Kick Sauber
+2024,24,PIA,McLaren
