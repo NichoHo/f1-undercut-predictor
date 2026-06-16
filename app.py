@@ -33,16 +33,41 @@ CORE_FEATURES = [
 ]
 
 def load_data():
-    """Load CSV data into memory"""
+    """Load CSV data into memory with type and column optimizations"""
     global f1_data, events_summary, pit_laps_summary, drivers_summary
     
     try:
         # Load main data file
         csv_path = 'f1_data/f1_2022_2024.csv'
         if os.path.exists(csv_path):
-            print(f"Loading data from {csv_path}...")
-            f1_data = pd.read_csv(csv_path, low_memory=False)
-            print(f"✅ Loaded {len(f1_data)} records")
+            print(f"Loading data from {csv_path} (Optimizing performance)...")
+            
+            # Specify columns actually required by features & API endpoints
+            required_cols = [
+                'Year', 'RoundNumber', 'LapNumber', 'Driver', 'Position', 
+                'Team', 'Compound', 'Time', 'LapTime', 'TyreLife', 'PitOutTime'
+            ]
+            
+            # Explicitly define low-level datatypes to prevent casting overhead loops
+            optimized_dtypes = {
+                'Year': 'int16',
+                'RoundNumber': 'int8',
+                'LapNumber': 'int8',
+                'Driver': 'string',
+                'Position': 'float32',  # Float allows handling NaN entries smoothly
+                'Team': 'string',
+                'Compound': 'string'
+            }
+            
+            # Read only required columns with strict typing constraints
+            f1_data = pd.read_csv(
+                csv_path, 
+                usecols=lambda col: col in required_cols,
+                dtype=optimized_dtypes,
+                engine='c',
+                low_memory=False
+            )
+            print(f"✅ Loaded {len(f1_data)} records efficiently")
         else:
             print(f"❌ Data file not found: {csv_path}")
             return False
@@ -52,18 +77,11 @@ def load_data():
         pit_laps_summary = pd.read_csv('f1_data/pit_laps_summary.csv')
         drivers_summary = pd.read_csv('f1_data/drivers_summary.csv')
         
-        # Convert relevant columns to appropriate types
-        if 'PitStopDuration' in f1_data.columns:
-            f1_data['PitStopDuration'] = pd.to_numeric(f1_data['PitStopDuration'], errors='coerce')
-        
-        if 'Time' in f1_data.columns:
-            f1_data['Time'] = pd.to_numeric(f1_data['Time'], errors='coerce')
-        
-        if 'LapTime' in f1_data.columns:
-            f1_data['LapTime'] = pd.to_numeric(f1_data['LapTime'], errors='coerce')
-        
-        if 'TyreLife' in f1_data.columns:
-            f1_data['TyreLife'] = pd.to_numeric(f1_data['TyreLife'], errors='coerce')
+        # Safe fast parsing of specific metrics
+        print("Synchronizing data arrays...")
+        for col in ['PitStopDuration', 'Time', 'LapTime', 'TyreLife']:
+            if col in f1_data.columns:
+                f1_data[col] = pd.to_numeric(f1_data[col], errors='coerce')
         
         return True
         
@@ -74,25 +92,32 @@ def load_data():
         return False
 
 def load_model():
-    """Load the ML model"""
+    """Load the ML model with pre-warmed dependencies to prevent initialization freezing"""
     global model
     try:
         model_path = 'Datamining_model_final.pkl'
         if os.path.exists(model_path):
+            print(f"Warming up model libraries...")
+            # Pre-import core dependencies to resolve namespace lookup lag early
+            import sklearn
+            import scipy
+            import numpy
+            
+            print(f"Loading predictive model from {model_path}...")
             model = joblib.load(model_path)
-            print(f"✅ Model loaded from {model_path}")
+            print(f"✅ Model successfully synchronized and loaded")
         else:
-            print(f"⚠ Model file not found: {model_path}")
-            # Create a dummy model for testing
+            print(f"⚠ Model file not found at {model_path}")
+            # Fallback dummy structure for development environments
             from sklearn.ensemble import RandomForestClassifier
             from sklearn.datasets import make_classification
             X, y = make_classification(n_samples=100, n_features=7, random_state=42)
             dummy_model = RandomForestClassifier(n_estimators=10, random_state=42)
             dummy_model.fit(X, y)
             model = dummy_model
-            print("✅ Created dummy model for testing")
+            print("✅ Created fallback dummy model for local testing")
     except Exception as e:
-        print(f"❌ Error loading model: {e}")
+        print(f"❌ Critical error parsing model data structure: {e}")
         model = None
 
 def calculate_features(year, round_num, pit_lap, chaser, defender):
@@ -197,6 +222,11 @@ def calculate_features(year, round_num, pit_lap, chaser, defender):
             'InLap_Sec': in_lap_sec,
             'OutLap_Sec': out_lap_sec
         }
+
+        # Replace any NaN values with 0.0 to prevent JSON crashes
+        for key, value in features.items():
+            if pd.isna(value):
+                features[key] = 0.0
         
         print(f"Calculated features for {chaser} vs {defender} on lap {pit_lap}: {features}")
         return features
@@ -294,9 +324,13 @@ def api_standings(year, round_num, lap_number):
         # Get driver info
         drivers_info = []
         for _, driver_lap in lap_data.iterrows():
+            # Safely extract position, handling NaN for retired drivers
+            pos_val = driver_lap.get('Position', 99)
+            safe_position = int(pos_val) if pd.notna(pos_val) else 99
+            
             drivers_info.append({
                 'driver': str(driver_lap.get('Driver', 'Unknown')),
-                'position': int(driver_lap.get('Position', 99)),
+                'position': safe_position,
                 'team': str(driver_lap.get('Team', 'Unknown')),
                 'compound': str(driver_lap.get('Compound', 'Unknown')),
                 'time': float(driver_lap.get('Time', 0)) if pd.notna(driver_lap.get('Time')) else None

@@ -3,113 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Undercut Predictor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>F1 Undercut Predictor | Telemetry Console</title>
+    
+    <link rel="icon" type="image/png" href="/static/images/f1_logo.png">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <div class="container">
-        <!-- Left Panel -->
-        <div class="left-panel">
-            <h2>Race Selection</h2>
-            <div class="selection-group">
-                <label for="yearSelect">Season</label>
-                <select id="yearSelect">
-                    <option value="">Select Year</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                    <option value="2024">2024</option>
-                </select>
-            </div>
-            
-            <div class="selection-group">
-                <label for="eventSelect">Grand Prix</label>
-                <select id="eventSelect">
-                    <option value="">Select Race</option>
-                </select>
-            </div>
+<body class="dark-theme">
+
+    <!-- Sleek Top Navbar (Glassmorphic) -->
+    <nav class="top-nav">
+        <div class="brand-logo">
+            <img src="../static/images/f1-logo.png" alt="Formula 1" class="f1-logo">
         </div>
+        <ul class="nav-links">
+            <li class="active"><a href="/" title="Predictor Console">Analytics</a></li>
+            <li><a href="/live" title="Live Weekend Dashboard">Live</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <main class="dashboard-container">
         
-        <!-- Middle Panel -->
-        <div class="middle-panel">
-            <!-- Lap Slider -->
-            <div class="card">
-                <h3>Select Lap</h3>
-                <div class="lap-slider-container">
-                    <span class="lap-value" id="lapValue">1</span>
-                    <input type="range" id="lapSlider" class="slider" min="1" max="1" value="1" disabled>
-                </div>
-            </div>
+        <!-- COLUMN 1: The Control Panel -->
+        <section class="panel control-panel">
+            <header class="panel-header">
+                <h2>Strategy Options</h2>
+                <span class="status-indicator live"></span>
+            </header>
             
-            <!-- Driver Selection -->
-            <div class="card">
-                <h3>Select Drivers</h3>
-                <div class="driver-selection">
-                    <div class="driver-box" id="chaserBox">
-                        <h4>Chaser</h4>
-                        <select id="chaserSelect" disabled>
-                            <option value="">Select Chaser</option>
-                        </select>
+            <form id="prediction-form" class="control-form">
+                
+                <div class="input-group">
+                    <label for="yearSelect">Year</label>
+                    <select id="yearSelect" name="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="eventSelect">Grand Prix</label>
+                    <select id="eventSelect" name="grand_prix" required disabled>
+                        <option value="" disabled selected>Select Race</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="lapInput">Current Lap</label>
+                    <input type="number" id="lapInput" name="current_lap" min="1" placeholder="e.g. 18" required disabled>
+                    <small id="lap-help-text" class="help-text hidden"></small>
+                </div>
+
+                <div class="input-group">
+                    <label for="driverBehindSelect">Driver Behind (Pitting)</label>
+                    <select id="driverBehindSelect" name="driver_behind" required disabled>
+                        <option value="" disabled selected>Select Driver</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="driverAheadInput">Driver Ahead (Target)</label>
+                    <input type="text" id="driverAheadInput" name="driver_ahead" placeholder="Auto-selected target" readonly required class="readonly-input">
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="predictBtn" class="action-btn" disabled>
+                        <span class="btn-text">GENERATE STRATEGY</span>
+                        <span class="btn-loader hidden">PROCESSING...</span>
+                    </button>
+                    <button type="button" id="predictTimingBtn" class="action-btn secondary-btn" disabled>
+                        <span class="btn-text"><i class="fas fa-search"></i> OPTIMAL WINDOW</span>
+                        <span class="btn-loader hidden">SEARCHING...</span>
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Error Display Area -->
+            <div id="error-container"></div>
+        </section>
+
+        <!-- COLUMN 2: The Verdict & Distribution -->
+        <section class="panel verdict-panel">
+            <header class="panel-header">
+                <h2>Probability Distribution</h2>
+            </header>
+            <div class="verdict-display">
+                <h1 id="verdict-output" class="verdict-text pending">STANDBY</h1>
+                
+                <div class="confidence-meter">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path id="confidence-ring" class="circle-path" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="confidence-value">
+                        <span id="confidence-percentage">--</span>%
+                    </div>
+                </div>
+                <p class="confidence-label">UNDERCUT PROBABILITY</p>
+                <div id="confidenceBadge" class="system-label mt-2">Awaiting Parameters</div>
+            </div>
+        </section>
+
+        <!-- COLUMN 3: Supporting Metrics -->
+        <section class="panel metrics-panel">
+    
+            <div class="metric-card full-width strategy-widget">
+                <h4>Head-to-Head Strategy</h4>
+                <div class="strategy-grid">
+                    
+                    <div class="driver-card ahead">
+                        <div class="role-label">DEFENDING</div>
+                        <div class="driver-name" id="comp-name-ahead">--</div>
+                        <div class="stat-row">
+                            <span class="stat-label">Tire</span>
+                            <span id="comp-tire-ahead" class="tire-badge">--</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Tire Age</span>
+                            <span id="comp-age-ahead" class="stat-value">-- Laps</span>
+                        </div>
+                    </div>
+
+                    <div class="vs-divider">VS</div>
+
+                    <div class="driver-card behind">
+                        <div class="role-label accent">ATTACKING</div>
+                        <div class="driver-name" id="comp-name-behind">--</div>
+                        <div class="stat-row">
+                            <span class="stat-label">Tire</span>
+                            <span id="comp-tire-behind" class="tire-badge">--</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Est. Pit Loss</span>
+                            <span class="stat-value highlight">~24.5s</span>
+                        </div>
                     </div>
                     
-                    <div class="vs-text">VS</div>
-                    
-                    <div class="driver-box" id="defenderBox">
-                        <h4>Defender</h4>
-                        <select id="defenderSelect" disabled>
-                            <option value="">Select Defender</option>
-                        </select>
+                </div>
+            </div>
+
+            <div class="metric-card full-width gap-widget">
+                <div class="gap-header">
+                    <div class="gap-info">
+                        <h4>Gap to Target</h4>
+                        <div class="gap-value" id="current-gap-display">--</div>
+                    </div>
+                    <div class="gap-trend trend-closing" id="gap-trend-display">
+                        <i class="fas fa-arrow-down"></i> Closing
                     </div>
                 </div>
                 
-                <div class="button-group">
-                    <button id="predictBtn" class="predict-button" disabled>Predict Undercut</button>
-                    <button id="predictTimingBtn" class="predict-button secondary" disabled>Predict Best Timing</button>
+                <div class="chart-container">
+                    <canvas id="paceDeltaChart"></canvas>
+                </div>
+                
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="dot ahead-dot"></span> Target Pace</span>
+                    <span class="legend-item"><span class="dot behind-dot"></span> Chaser Pace</span>
                 </div>
             </div>
-            
-            <!-- Recommended Laps -->
-            <div class="card" id="recommendedLaps" style="display: none;">
-                <h3>Recommended Laps for Undercut</h3>
-                <div id="recommendedLapsList">
-                    <!-- Will be populated dynamically -->
-                </div>
-                <div class="recommended-info">
-                    <p>These laps show the highest predicted success rates for an undercut strategy.</p>
-                </div>
-            </div>
-            
-            <!-- Prediction Result -->
-            <div class="card" id="predictionResult" style="display: none;">
-                <h3>Prediction Result</h3>
-                <div class="prediction-result">
-                    <div>
-                        <h4>Undercut Success</h4>
-                        <div class="success-badge success" id="successBadge">SUCCESS</div>
-                        <div id="confidenceBadge">Medium Confidence</div>
-                    </div>
-                    <div>
-                        <h4>Success Probability</h4>
-                        <div style="font-size: 2.5rem; font-weight: bold;" id="probabilityValue">75%</div>
-                        <div>Based on ML Model</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Right Panel -->
-        <div class="right-panel">
-            <h2>Current Standings</h2>
-            <p>Lap: <span id="currentLapDisplay">0</span></p>
-            <div id="standingsList">
-                <div class="empty-state">
-                    <i class="fas fa-flag-checkered"></i>
-                    <p>Select a race and lap to see standings</p>
+        </section>
+
+    </main>
+
+    <div id="timing-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content panel">
+            <header class="panel-header">
+                <h2>Optimal Pit Windows</h2>
+                <button id="close-modal" class="icon-btn"><i class="fas fa-times"></i></button>
+            </header>
+            <div class="modal-body">
+                <div id="recommendedLapsList" class="recommended-list">
+                    <!-- Dynamic Lap Items will generate here -->
                 </div>
             </div>
         </div>
     </div>
-    
-    <script src="../static/js/app.js"></script>
+
+    <script src="/static/js/app.js"></script>
 </body>
 </html>
