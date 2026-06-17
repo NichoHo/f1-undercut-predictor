@@ -38,7 +38,7 @@ def load_data():
     
     try:
         # Load main data file
-        csv_path = 'f1_data/f1_2022_2024.csv'
+        csv_path = 'f1_data/f1_2023_2025.csv'
         if os.path.exists(csv_path):
             print(f"Loading data from {csv_path} (Optimizing performance)...")
             
@@ -319,7 +319,7 @@ def api_track_stats(year, round_num):
 @app.route('/api/years')
 def api_years():
     """Get available years"""
-    return jsonify({'years': [2022, 2023, 2024]})
+    return jsonify({'years': [2023, 2024, 2025]})
 
 @app.route('/api/events/<int:year>')
 def api_events(year):
