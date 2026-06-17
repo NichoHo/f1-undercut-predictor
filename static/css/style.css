@@ -326,17 +326,42 @@ body {
 }
 
 .metric-card {
-    background: transparent;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-dim);
+    border-radius: 12px; /* Smoother rounded corners */
+    padding: 1.5rem; /* This fixes the cramped text! */
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle depth */
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
+.metric-card:hover {
+    border-color: rgba(225, 6, 0, 0.3); /* Slight F1 Red glow on hover */
+}
+
+/* Card Headers */
 .metric-card h4 {
-    font-size: 0.8rem;
-    color: var(--text-main);
+    font-size: 0.75rem;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+/* Quick Stat Values (For the Archive Page) */
+.gap-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    line-height: 1.1;
+    color: var(--text-main);
+    margin-top: auto;
+}
+
+.metrics-panel {
+    gap: 1.5rem;
 }
 
 .strategy-widget, .gap-widget {
@@ -668,6 +693,32 @@ body {
     gap: 8px;
 }
 
+/* =========================================
+   ARCHIVE PAGE SPECIFICS
+   ========================================= */
+.archive-grid {
+    grid-template-columns: 320px 1fr;
+}
+
+.archive-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.archive-chart-wrapper {
+    flex: 1; 
+    display: flex; 
+    flex-direction: column;
+    min-height: 400px;
+}
+
 @media (max-width: 1400px) {
     .dashboard-container {
         grid-template-columns: 300px 1fr;
@@ -678,6 +729,38 @@ body {
         grid-column: span 2;
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .archive-grid {
+        grid-template-columns: 320px 1fr; 
+        /* Define two explicit rows */
+        grid-template-rows: auto auto; 
+    }
+    
+    .archive-metrics {
+        /* Unwraps the inner divs so they join the main grid */
+        display: contents; 
+    }
+    
+    .archive-grid .control-panel {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .archive-grid .stats-grid {
+        grid-column: 2;
+        grid-row: 1;
+        /* Stack the 3 stat boxes on top of each other */
+        grid-template-columns: 1fr; 
+    }
+    
+    .archive-grid .archive-chart-wrapper {
+        /* The Magic Fix: Spans from the first grid line to the very last */
+        grid-column: 1 / -1; 
+        grid-row: 2;
+        margin-top: 1rem;
     }
 }
 
@@ -713,5 +796,27 @@ body {
     
     .driver-card.behind .stat-row {
         flex-direction: row;
+    }
+
+    .archive-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .archive-grid .control-panel {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .archive-grid .stats-grid {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr; 
+    }
+    
+    .archive-grid .archive-chart-wrapper {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 0;
     }
 }

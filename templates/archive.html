@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1UP | Historical Archive</title>
+    <link rel="icon" type="image/png" href="../static/images/f1-favicon.png">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <nav class="top-nav">
+        <div class="brand-logo">
+            <img src="../static/images/f1-logo.png" alt="Formula 1" class="f1-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" title="Predictor Console">Analytics</a></li>
+            <li class="active"><a href="/archive" title="Historical Track Analysis">Archive</a></li>
+            
+            <!--
+            <li><a href="/duel" title="Head-to-Head Telemetry">Duel</a></li>
+            <li><a href="/live" title="Live Weekend Dashboard">Live</a></li>
+            -->
+        </ul>
+    </nav>
+
+    <main class="dashboard-container archive-grid">
+        <section class="panel control-panel">
+            <header class="panel-header">
+                <h2>Track Selection</h2>
+            </header>
+            
+            <form id="archive-form" class="control-form">
+                <div class="input-group">
+                    <label for="yearSelect">Historical Year</label>
+                    <select id="yearSelect" name="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="eventSelect">Grand Prix</label>
+                    <select id="eventSelect" name="grand_prix" required disabled>
+                        <option value="" disabled selected>Select Race</option>
+                    </select>
+                </div>
+
+                <button type="button" id="analyze-btn" class="action-btn" disabled>
+                    <span class="btn-text">ANALYZE DATA</span>
+                    <span class="btn-loader hidden">QUERYING...</span>
+                </button>
+            </form>
+        </section>
+
+        <section class="archive-metrics">
+            <div class="stats-grid">
+                <div class="metric-card strategy-widget" style="margin-bottom: 0;">
+                    <h4>Avg. Stationary Time</h4>
+                    <div class="gap-value" id="stat-pit-time">-- s</div>
+                </div>
+                <div class="metric-card strategy-widget" style="margin-bottom: 0;">
+                    <h4>Preferred Compound</h4>
+                    <div class="gap-value" id="stat-compound" style="color: var(--accent-main);">--</div>
+                </div>
+                <div class="metric-card strategy-widget" style="margin-bottom: 0;">
+                    <h4>Total Recorded Stops</h4>
+                    <div class="gap-value" id="stat-total-stops">--</div>
+                </div>
+            </div>
+
+            <!-- Main Chart: Pit Window Distribution -->
+            <div class="metric-card strategy-widget archive-chart-wrapper">
+                <header class="gap-header">
+                    <div class="gap-info">
+                        <h4>Historical Pit Window Distribution</h4>
+                        <p class="role-label mt-2">Frequency of pit stops by lap number</p>
+                    </div>
+                </header>
+                <div class="chart-container" style="height: 100%; flex: 1;">
+                    <canvas id="pitWindowChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/js/archive.js"></script>
+</body>
+</html>

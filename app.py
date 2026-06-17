@@ -45,7 +45,8 @@ def load_data():
             # Specify columns actually required by features & API endpoints
             required_cols = [
                 'Year', 'RoundNumber', 'LapNumber', 'Driver', 'Position', 
-                'Team', 'Compound', 'Time', 'LapTime', 'TyreLife', 'PitOutTime'
+                'Team', 'Compound', 'Time', 'LapTime', 'TyreLife', 'PitOutTime', 
+                'PitStopDuration'
             ]
             
             # Explicitly define low-level datatypes to prevent casting overhead loops
@@ -54,9 +55,10 @@ def load_data():
                 'RoundNumber': 'int8',
                 'LapNumber': 'int8',
                 'Driver': 'string',
-                'Position': 'float32',  # Float allows handling NaN entries smoothly
+                'Position': 'float32',
                 'Team': 'string',
-                'Compound': 'string'
+                'Compound': 'string',
+                'PitStopDuration': 'float32'
             }
             
             # Read only required columns with strict typing constraints
@@ -246,6 +248,74 @@ def index():
     """Main page"""
     return render_template('index.html')
 
+@app.route('/archive')
+def archive():
+    """Historical Track Analysis Page"""
+    return render_template('archive.html')
+
+@app.route('/api/track-stats/<int:year>/<int:round_num>')
+def api_track_stats(year, round_num):
+    """Get historical pit stop distributions for a specific track safely"""
+    try:
+        if f1_data is None:
+            return jsonify({'success': False, 'error': 'Data not loaded'})
+            
+        # Filter data for the specific race
+        race_data = f1_data[(f1_data['Year'] == year) & (f1_data['RoundNumber'] == round_num)]
+        
+        # Safe return if no data exists (Always returns 200 OK to prevent HTML crash)
+        if race_data.empty:
+            return jsonify({
+                'success': False, 
+                'error': f'No telemetry data found for Year {year}, Round {round_num}. (Race may be cancelled or missing)'
+            })
+            
+        # Get pit stop data (rows where PitOutTime is not null)
+        pit_data = race_data[race_data['PitOutTime'].notna()]
+        
+        if pit_data.empty:
+            return jsonify({
+                'success': True,
+                'avg_pit_time': 0.0,
+                'popular_compound': "Unknown",
+                'total_stops': 0,
+                'distribution': {}
+            })
+        
+        # Calculate Pit Stop Distribution
+        pit_distribution = pit_data.groupby('LapNumber').size().reset_index(name='count')
+        pit_dist_dict = {int(row['LapNumber']): int(row['count']) for _, row in pit_distribution.iterrows()}
+        
+        # --- SAFE COLUMN CHECK TO PREVENT KEYERROR ---
+        avg_pit_time = 0.0
+        if 'PitStopDuration' in pit_data.columns:
+            valid_stops = pit_data[pit_data['PitStopDuration'] < 10.0]
+            avg_pit_time = valid_stops['PitStopDuration'].mean() if not valid_stops.empty else 0.0
+            if pd.isna(avg_pit_time):
+                avg_pit_time = 0.0
+        
+        # Determine most popular tire compound safely
+        popular_compound = "Unknown"
+        if 'Compound' in pit_data.columns:
+            modes = pit_data['Compound'].dropna().mode()
+            if not modes.empty:
+                popular_compound = str(modes.iloc[0])
+                
+        return jsonify({
+            'success': True,
+            'avg_pit_time': float(avg_pit_time),
+            'popular_compound': popular_compound,
+            'total_stops': len(pit_data),
+            'distribution': pit_dist_dict
+        })
+        
+    except Exception as e:
+        print(f"Error calculating track stats: {e}")
+        import traceback
+        traceback.print_exc()
+        # Return 200 OK so JS can handle the error gracefully
+        return jsonify({'success': False, 'error': str(e)})
+
 @app.route('/api/years')
 def api_years():
     """Get available years"""
@@ -253,22 +323,33 @@ def api_years():
 
 @app.route('/api/events/<int:year>')
 def api_events(year):
-    """Get events for a specific year from CSV"""
+    """Get events for a specific year from CSV safely"""
     try:
         if events_summary is None:
             return jsonify({'events': [], 'error': 'Data not loaded'})
         
-        year_events = events_summary[events_summary['Year'] == year]
-        events = []
+        # --- DIAGNOSTIC PRINT ---
+        available_years = events_summary['Year'].unique().tolist()
+        print(f"DEBUG: Frontend asked for {year}. CSV contains years: {available_years}")
+        # ------------------------
+
+        # Force clean string comparison to avoid int/float/string mismatches
+        target_year = str(year)
         
-        for _, row in year_events.iterrows():
-            events.append({
-                'RoundNumber': int(row['RoundNumber']),
-                'EventName': str(row['EventName'])
-            })
+        events = []
+        for _, row in events_summary.iterrows():
+            # Clean the CSV year value (remove decimals or hidden spaces)
+            csv_year = str(row['Year']).replace('.0', '').strip()
+            
+            if csv_year == target_year:
+                events.append({
+                    'RoundNumber': int(row['RoundNumber']),
+                    'EventName': str(row['EventName'])
+                })
         
         print(f"Found {len(events)} events for {year}")
         return jsonify({'events': events})
+        
     except Exception as e:
         print(f"Error getting events for {year}: {e}")
         return jsonify({'events': [], 'error': str(e)})
