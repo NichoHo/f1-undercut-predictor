@@ -695,7 +695,11 @@ if __name__ == '__main__':
     print("=" * 50)
     print("F1 Undercut Predictor - CSV Version")
     print("=" * 50)
-    print("Server: http://127.0.0.1:5000")
+    
+    # Fetch Render's dynamically assigned port, or default to 5000 locally
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Server: listening on 0.0.0.0:{port}")
     print("=" * 50)
     
-    app.run(debug=True, port=5000, threaded=True)
+    # Bind to 0.0.0.0 so the outside world can access it
+    app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
